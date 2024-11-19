@@ -1,0 +1,24 @@
+<section class="order" id="order" >
+  <div class="container">
+    <div class="order-text">
+      <div class="order-text-title double-title">
+        <a routerLink="/order" [queryParams]="{product: formValues.productTitle + '1 '}" >Хватит думать!</a> Доставим заказ за 30 минут!
+      </div>
+      <div class="order-text-description" >
+        Мы гарантированно доставим вашу пиццу за 30 минут с момента оформления заказа. Если мы опоздаем даже на
+        1 минуту - вы получаете весь заказ бесплатно и ваучер на скидку на следующий заказ. Мы гордимся нашим
+        сервисом и сделаем всё, чтобы наш клиент был доволен и не остался голодный!
+      </div>
+    </div>
+    <form class="order-form">
+      <input pInputText [(ngModel)]="formValues.productTitle"  name="productTitle" type="text" class="order-input" id="product-input"
+             placeholder="Пицца">
+      <input pInputText [(ngModel)]="formValues.address" name="address" type="text" class="order-input" id="address-input" placeholder="Адрес доставки">
+      <input pInputText [(ngModel)]="formValues.phone" name="phone"  type="text" class="order-input" id="phone-input" placeholder="+7 (999) 999-99-99" pattern="^\+7\s\(9\d{2}\)\s\d{3}-\d{2}-\d{2}" required>
+      <button class="btn" (click)="createOrder()">Оформить заказ</button>
+    </form>
+    <div class="order-img wow animate__backInRight">
+      <img src="../../../../public/assets/images/pizza-order.png" alt="pizza-order">
+    </div>
+  </div>
+</section>
